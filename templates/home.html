@@ -1,0 +1,141 @@
+{% load static %}
+
+<style>
+    .hello-msg{
+        font-size: 18px;
+        colour: #fff;
+        margin-right: 20px;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<!DOCTYPE html>
+<html>
+
+<!DOCTYPE html>
+<html lang="en">
+   {% load static %}
+   {% include 'head.html' %}
+
+    <style>
+       html,
+       body,
+       header,
+       .jarallax {
+       height: 600px;
+       min-height: 600px;
+       }
+    </style>
+ 
+   <body>
+      <!-- Intro Section -->
+      
+      <div class="view jarallax" data-jarallax='{"speed": 0.2}'
+         style="background-image: url('https://cdn.pixabay.com/photo/2013/11/03/08/05/cheers-204742_1280.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;margin-top:-100px;">
+         <div class="mask rgba-indigo-light">
+            <div class="container h-100 d-flex justify-content-center align-items-center">
+               <div class="row">
+                  <div class="col-md-12 wow fadeIn">
+                     <div class="text-center white-text">
+                        <ul class="list-unstyled">
+                           <li>
+                              <h1 class="display-4 font-weight-bold white-text wow fadeIn"
+                                 data-wow-delay="0.3s">
+                                 <strong>Want to find new music?</strong>
+                              </h1>
+                           </li>
+                           <li>
+                              
+                           </li>
+                           <hr>
+                           <form action="{% url 'search' %}" method="get">
+                              <!--Accordion wrapper-->
+                              <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                                 <!-- Accordion card -->
+                                 <div class="card">
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab" id="headingOne1">
+                                       <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                                          aria-controls="collapseOne1">
+                                          <h5 class="mb-0">
+                                             Advanced Search <i class="fas fa-angle-down rotate-icon"></i>
+                                          </h5>
+                                          <small class="text-muted">Filter By Categories</small>
+                                       </a>
+                                    </div>
+                                    <!-- Card body -->
+                                    <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                       <div class="card-body">
+                                          <!-- Material checked -->
+                                          <div class="form-check form-check-inline">
+                                             <input type="radio" class="form-check-input" value="on" id="pop" name="pop">
+                                             <label class="form-check-label" for="pop">pop</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                             <input type="radio" class="form-check-input" value="on" id="rock" name="rock">
+                                             <label class="form-check-label" for="rock">rock</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                             <input type="radio" class="form-check-input" value="on" id="ambient" name="ambient">
+                                             <label class="form-check-label" for="ambient">ambient</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                             <input type="radio" class="form-check-input" value="on" id="hip hop" name="hip hop">
+                                             <label class="form-check-label" for="hip hop">hip hop</label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Accordion card -->
+                              <li class="wow fadeIn" data-wow-delay="0.4s">
+                                 <div class="md-form mb-0">
+                                    <input type="text" id="form51" class="form-control" name="search">
+                                    <label for="form51" class="">Search</label>
+                                 </div>
+                                 <button class="btn btn-white btn-rounded btn-lg orange-text font-weight-bold ml-lg-0" type="submit">
+                                 <i class="fas fa-search orange-text mr-2" aria-hidden="true"></i> Find Songs</button>
+                              </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </form>
+      <footer class="page-footer text-center text-md-left unique-color-dark pt-0">
+        <div class="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="{%url 'home' %}">Forums</a></li>
+                    <li class="nav-item"><a href="posts.html">About Me</a></li>
+                    <li class="nav-item"><a href="{%url 'logout' %}">Logout</a></li>
+                </ul>
+            </nav>
+            <div class="brand">TuneTalk</div>    
+        </div>
+     </footer>
+
+      {% include 'scripts.html' %}
+      <script>
+         // Animation init
+         new WOW().init();
+         
+         // Material Select Initialization
+         $(document).ready(function () {
+           $('.mdb-select').material_select();
+         });
+      </script>
+   </body>
+</html>
