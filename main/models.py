@@ -13,8 +13,6 @@ from autoslug import AutoSlugField
 
 User = get_user_model()
 
-#SOME NEW SHIT BELOW DJANGO CENTRAL TUTORIAL
-
 """
 STATUS = (
     (0,"Draft"),
